@@ -1,0 +1,22 @@
+{
+  "name": "pterrific-ui-example",
+  "displayName": "PterrificUi Example",
+  "expo": {
+    "name": "pterrific-ui-example",
+    "slug": "pterrific-ui-example",
+    "description": "Example app for pterrific-ui",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
