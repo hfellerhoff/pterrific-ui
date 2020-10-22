@@ -1,5 +1,8 @@
-export default {
-  multiply(a: number, b: number) {
-    return Promise.resolve(a * b);
-  },
-};
+import Radio from './radio/Radio';
+import RadioGroup from './radio/RadioGroup';
+
+const PterrificUI = { Radio, RadioGroup };
+
+export { Radio, RadioGroup };
+
+export default PterrificUI;

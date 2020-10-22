@@ -2,7 +2,7 @@
   "name": "pterrific-ui-example",
   "description": "Example app for pterrific-ui",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "main": "index",
   "scripts": {
     "android": "expo start --android",
@@ -12,13 +12,15 @@
     "test": "jest"
   },
   "dependencies": {
-    "expo": "^38.0.0",
-    "expo-splash-screen": "^0.3.1",
-    "react": "16.11.0",
+    "@expo/vector-icons": "^10.2.1",
+    "expo": "^39.0.0",
+    "expo-splash-screen": "^0.6.x",
+    "react": "16.13.x",
     "react-dom": "16.11.0",
-    "react-native": "0.62.2",
+    "react-native": "0.63.x",
     "react-native-unimodules": "~0.10.1",
-    "react-native-web": "^0.12.3"
+    "react-native-vector-icons": "^7.1.0",
+    "react-native-web": "^0.14.x"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

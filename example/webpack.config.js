@@ -13,6 +13,11 @@ module.exports = async function (env, argv) {
     include: path.resolve(root, 'src'),
     use: 'babel-loader',
   });
+  config.module.rules.push({
+    test: /\.ttf$/,
+    loader: 'url-loader', // or directly file-loader
+    include: path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
+  });
 
   // We need to make sure that only one version is loaded for peerDependencies
   // So we alias them to the versions in example's node_modules
