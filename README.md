@@ -11,11 +11,22 @@ npm install pterrific-ui
 ## Usage
 
 ```js
-import PterrificUi from "pterrific-ui";
+import { Radio, RadioGroup } from "pterrific-ui";
 
 // ...
 
-const result = await PterrificUi.multiply(3, 7);
+<RadioGroup
+    style={style}           // "card" | "minimal"
+    iconStyle={iconStyle}   // "check" | "circle"
+    type={type}             // "radio" | "select"
+    inline={inline}         // boolean
+    onChange={(incomingValues) => setValues(incomingValues)}  // string | number | boolean => void
+>
+    <Radio>A</Radio>
+    <Radio>B</Radio>
+    <Radio>C</Radio>
+    <Radio>D</Radio>
+</RadioGroup>
 ```
 
 ## Contributing
