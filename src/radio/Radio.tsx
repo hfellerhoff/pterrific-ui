@@ -54,7 +54,7 @@ export default function Radio({
             ? styles.minimalContainerSelected
             : {}
           : {},
-        Platform.OS === 'android' || (Platform.OS === 'ios' && !inline)
+        (Platform.OS === 'android' || Platform.OS === 'ios') && !inline
           ? { paddingVertical: 20 }
           : {},
         Platform.OS !== 'android' && Platform.OS !== 'ios'
