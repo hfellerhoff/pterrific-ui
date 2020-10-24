@@ -6,7 +6,8 @@ import type {
   RadioGroupStyle,
   RadioGroupType,
   RadioGroupValue,
-} from 'src/radio/RadioGroup';
+} from 'src/components/radio/RadioGroup';
+import ExampleLayout from '../ExampleLayout';
 
 export default function RadioGroupExample() {
   const [values, setValues] = useState<RadioGroupValue[]>([]);
@@ -28,10 +29,7 @@ export default function RadioGroupExample() {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.headingContainer}>
-        <Text style={styles.heading}>Radio Group</Text>
-      </View>
+    <ExampleLayout title="Radio">
       <View style={styles.optionsContainer}>
         <RadioGroup
           inline
@@ -83,18 +81,11 @@ export default function RadioGroupExample() {
         <Text>Selection:</Text>
         {renderListItems(values)}
       </View>
-    </View>
+    </ExampleLayout>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F6F6F6',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    padding: 10,
-  },
   headingContainer: {
     marginTop: 20,
     marginBottom: 10,

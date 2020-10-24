@@ -6,6 +6,8 @@ import type {
   RadioGroupStyle,
   RadioGroupValue,
 } from './RadioGroup';
+import Colors from '../../constants/Colors';
+import Spacing from '../../constants/Spacing';
 
 export interface RadioProps {
   children: string;
@@ -42,7 +44,7 @@ export default function Radio({
           : {},
         style === 'card'
           ? {
-              borderColor: pressed ? '#8BBDE8' : '#EDEDED',
+              borderColor: pressed ? Colors.Blue['200'] : Colors.Gray['200'],
             }
           : style === 'minimal'
           ? {}
@@ -55,7 +57,7 @@ export default function Radio({
             : {}
           : {},
         (Platform.OS === 'android' || Platform.OS === 'ios') && !inline
-          ? { paddingVertical: 20 }
+          ? { paddingVertical: Spacing[20] }
           : {},
         Platform.OS !== 'android' && Platform.OS !== 'ios'
           ? { cursor: 'pointer' }
@@ -73,8 +75,11 @@ export default function Radio({
             : {},
 
           style === 'minimal' && isPressed
-            ? // eslint-disable-next-line react-native/no-inline-styles
-              { borderColor: isPressed ? '#8BBDE8' : '#E1E8F1' }
+            ? {
+                borderColor: isPressed
+                  ? Colors.Blue['200']
+                  : Colors.Gray['200'],
+              }
             : {},
         ]}
       >
@@ -100,8 +105,8 @@ export default function Radio({
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    margin: 2.5,
+    padding: Spacing[10],
+    margin: Spacing[2],
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -111,38 +116,38 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
   },
   cardContainer: {
-    backgroundColor: '#ffffff',
-    borderColor: '#EDEDED',
+    backgroundColor: 'white',
+    borderColor: Colors.Gray[200],
   },
   cardContainerSelected: {
-    borderColor: '#2C91E8',
+    borderColor: Colors.Blue['400'],
   },
   minimalContainer: {},
   minimalContainerSelected: {},
   iconContainer: {
     borderRadius: 50,
-    width: 20,
-    height: 20,
+    width: Spacing[20],
+    height: Spacing[20],
     alignItems: 'center',
     justifyContent: 'center',
   },
   cardIconCircle: {
-    backgroundColor: '#EEEEEE',
+    backgroundColor: Colors.Gray[100],
   },
   cardIconCircleChecked: {
-    backgroundColor: '#2C91E8',
+    backgroundColor: Colors.Blue['400'],
   },
   minimalIconCircle: {
     backgroundColor: 'transparent',
     borderWidth: 2,
-    borderColor: '#E1E8F1',
+    borderColor: Colors.Gray[200],
   },
   minimalIconCircleChecked: {
-    backgroundColor: '#2C91E8',
-    borderColor: '#2C91E8',
+    backgroundColor: Colors.Blue['400'],
+    borderColor: Colors.Blue['400'],
   },
   icon: {
-    color: '#ffffff',
+    color: 'white',
     fontSize: 12,
   },
   iconCheck: {
@@ -150,7 +155,7 @@ const styles = StyleSheet.create({
   },
   iconCheckHook: {
     position: 'absolute',
-    backgroundColor: '#ffffff',
+    backgroundColor: 'white',
     bottom: -7,
     left: -5,
     height: 8,
@@ -160,7 +165,7 @@ const styles = StyleSheet.create({
   },
   iconCheckBody: {
     position: 'absolute',
-    backgroundColor: '#ffffff',
+    backgroundColor: 'white',
     bottom: -7.5,
     left: 0.5,
     height: 13,
@@ -169,17 +174,17 @@ const styles = StyleSheet.create({
     transform: [{ rotate: '45deg' }],
   },
   iconCircle: {
-    backgroundColor: '#ffffff',
-    height: 10,
-    width: 10,
+    backgroundColor: 'white',
+    height: Spacing[10],
+    width: Spacing[10],
     borderRadius: 50,
   },
   textContainer: {
-    marginLeft: 10,
-    marginRight: 20,
+    marginLeft: Spacing[10],
+    marginRight: Spacing[20],
     display: 'flex',
   },
   text: {
-    color: '#22272A',
+    color: Colors.Gray[800],
   },
 });
