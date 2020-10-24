@@ -1,6 +1,6 @@
 {
   "name": "pterrific-ui",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "A simply pterrific component library for React Native.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
