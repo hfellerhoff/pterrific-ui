@@ -1,7 +1,13 @@
 import { Spacing } from 'pterrific-ui';
 import React, { useState } from 'react';
-//@ts-ignore
-import { Pressable, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import {
+  //@ts-ignore
+  Pressable,
+  Text,
+  ActivityIndicator,
+  StyleSheet,
+  Platform,
+} from 'react-native';
 import FontSizes from '../../constants/FontSizes';
 import Colors, { Color, ColorIndex } from '../../constants/Colors';
 
@@ -52,6 +58,10 @@ const Button = ({
             ? variantColor[activeWeight]
             : variantColor[defaultWeight],
         },
+        Platform.OS !== 'android' && Platform.OS !== 'ios'
+          ? // eslint-disable-next-line react-native/no-inline-styles
+            { cursor: 'pointer' }
+          : {},
       ]}
     >
       {isLoading ? (

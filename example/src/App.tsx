@@ -3,7 +3,7 @@ import { StyleSheet, useWindowDimensions, View } from 'react-native';
 import RadioGroupExample from './radio/RadioGroupExample';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import ButtonExample from './radio/ButtonExample';
+import ButtonExample from './button/ButtonExample';
 
 const Drawer = createDrawerNavigator();
 

@@ -6,7 +6,7 @@ import type {
   RadioGroupStyle,
   RadioGroupValue,
 } from './RadioGroup';
-import Colors from '../../constants/Colors';
+import Colors, { Color } from '../../constants/Colors';
 import Spacing from '../../constants/Spacing';
 
 export interface RadioProps {
@@ -17,6 +17,7 @@ export interface RadioProps {
   style?: RadioGroupStyle;
   inline?: boolean;
   iconStyle?: RadioGroupIconStyle;
+  variantColor?: Color;
 }
 
 export default function Radio({
@@ -27,6 +28,7 @@ export default function Radio({
   style = 'card',
   inline = false,
   iconStyle = 'check',
+  variantColor = Colors.Blue,
 }: RadioProps) {
   const [isPressed, setIsPressed] = useState(false);
 
@@ -44,14 +46,14 @@ export default function Radio({
           : {},
         style === 'card'
           ? {
-              borderColor: pressed ? Colors.Blue['200'] : Colors.Gray['200'],
+              borderColor: pressed ? variantColor['200'] : Colors.Gray['200'],
             }
           : style === 'minimal'
           ? {}
           : {},
         isSelected
           ? style === 'card'
-            ? styles.cardContainerSelected
+            ? { borderColor: variantColor['400'] }
             : style === 'minimal'
             ? styles.minimalContainerSelected
             : {}
@@ -68,16 +70,21 @@ export default function Radio({
         style={[
           styles.iconContainer,
           style === 'card' ? styles.cardIconCircle : {},
-          style === 'card' && isSelected ? styles.cardIconCircleChecked : {},
+          style === 'card' && isSelected
+            ? { backgroundColor: variantColor['400'] }
+            : {},
           style === 'minimal' ? styles.minimalIconCircle : {},
           style === 'minimal' && isSelected
-            ? styles.minimalIconCircleChecked
+            ? {
+                backgroundColor: variantColor['400'],
+                borderColor: variantColor['400'],
+              }
             : {},
 
           style === 'minimal' && isPressed
             ? {
                 borderColor: isPressed
-                  ? Colors.Blue['200']
+                  ? variantColor['200']
                   : Colors.Gray['200'],
               }
             : {},
@@ -119,9 +126,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: Colors.Gray[200],
   },
-  cardContainerSelected: {
-    borderColor: Colors.Blue['400'],
-  },
   minimalContainer: {},
   minimalContainerSelected: {},
   iconContainer: {
@@ -134,17 +138,10 @@ const styles = StyleSheet.create({
   cardIconCircle: {
     backgroundColor: Colors.Gray[100],
   },
-  cardIconCircleChecked: {
-    backgroundColor: Colors.Blue['400'],
-  },
   minimalIconCircle: {
     backgroundColor: 'transparent',
     borderWidth: 2,
     borderColor: Colors.Gray[200],
-  },
-  minimalIconCircleChecked: {
-    backgroundColor: Colors.Blue['400'],
-    borderColor: Colors.Blue['400'],
   },
   icon: {
     color: 'white',

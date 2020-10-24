@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import Spacing from '../../constants/Spacing';
 import type { Color } from '../../constants/Colors';
 import Colors from '../../constants/Colors';
 
@@ -12,9 +13,9 @@ export interface DividerProps {
 
 const Divider = ({
   color = Colors.Grayscale,
-  height = 2,
+  height = StyleSheet.hairlineWidth,
   transparent = false,
-  spacing = StyleSheet.hairlineWidth,
+  spacing = Spacing[20],
 }: DividerProps) => {
   const backgroundColor = transparent ? 'transparent' : color?.[100];
 

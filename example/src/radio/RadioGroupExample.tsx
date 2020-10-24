@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { RadioGroup, Radio } from 'pterrific-ui';
+import {
+  RadioGroup,
+  Radio,
+  Colors,
+  Button,
+  Divider,
+  Spacing,
+  HorizontalView,
+} from 'pterrific-ui';
 import type {
   RadioGroupIconStyle,
   RadioGroupStyle,
@@ -18,13 +26,16 @@ export default function RadioGroupExample() {
 
   const renderListItems = (incomingValues: RadioGroupValue[]) => {
     return (
-      <View style={styles.listItemsContainer}>
-        {incomingValues.map((value, index) => (
-          <Text style={styles.listItem} key={index}>
-            {value}
-          </Text>
-        ))}
-      </View>
+      <HorizontalView>
+        <Text style={styles.listItemTitle}>Selection:</Text>
+        <HorizontalView>
+          {incomingValues.map((value, index) => (
+            <Text style={styles.listItem} key={index}>
+              {value}
+            </Text>
+          ))}
+        </HorizontalView>
+      </HorizontalView>
     );
   };
 
@@ -35,6 +46,7 @@ export default function RadioGroupExample() {
           inline
           initialValue="card"
           onChange={(value) => setStyle(value[0] as RadioGroupStyle)}
+          variantColor={Colors.Blue}
         >
           <Radio value="card">Card</Radio>
           <Radio value="minimal">Minimal</Radio>
@@ -43,6 +55,7 @@ export default function RadioGroupExample() {
           inline
           initialValue={type}
           onChange={(value) => setType(value[0] as RadioGroupType)}
+          variantColor={Colors.Orange}
         >
           <Radio value="radio">Radio</Radio>
           <Radio value="select">Select</Radio>
@@ -51,6 +64,7 @@ export default function RadioGroupExample() {
           inline
           initialValue={iconStyle}
           onChange={(value) => setIconStyle(value[0] as RadioGroupIconStyle)}
+          variantColor={Colors.Teal}
         >
           <Radio value="check">Check</Radio>
           <Radio value="circle">Circle</Radio>
@@ -59,6 +73,7 @@ export default function RadioGroupExample() {
           inline
           initialValue={inline}
           onChange={(value) => setInline(value[0] as boolean)}
+          variantColor={Colors.Purple}
         >
           <Radio value={false}>Column</Radio>
           <Radio value={true}>Inline</Radio>
@@ -71,26 +86,24 @@ export default function RadioGroupExample() {
         type={type}
         inline={inline}
         onChange={(incomingValues) => setValues(incomingValues)}
+        values={values}
       >
         <Radio value="A">A</Radio>
         <Radio value="B">B</Radio>
         <Radio value="C">C</Radio>
         <Radio value="D">D</Radio>
       </RadioGroup>
-      <View style={styles.headingContainer}>
-        <Text>Selection:</Text>
-        {renderListItems(values)}
-      </View>
+      <Divider transparent spacing={Spacing[10]} />
+      <Button variantColor={Colors.Gray} onPress={() => setValues([])}>
+        Clear
+      </Button>
+      <Divider transparent spacing={Spacing[10]} />
+      <View>{renderListItems(values)}</View>
     </ExampleLayout>
   );
 }
 
 const styles = StyleSheet.create({
-  headingContainer: {
-    marginTop: 20,
-    marginBottom: 10,
-    textAlign: 'center',
-  },
   optionsContainer: {
     marginVertical: 20,
     textAlign: 'center',
@@ -100,6 +113,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     fontSize: 24,
   },
-  listItemsContainer: { marginVertical: 20 },
-  listItem: { fontWeight: '700' },
+  listItemTitle: { marginRight: 5 },
+  listItem: { fontWeight: '700', textAlign: 'center' },
 });

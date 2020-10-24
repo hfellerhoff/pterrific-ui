@@ -1,5 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
+import Colors from '../../constants/Colors';
+import type { Color } from '../../constants/Colors';
 import type { RadioProps } from './Radio';
 
 export type RadioGroupStyle = 'card' | 'minimal';
@@ -15,6 +17,8 @@ export interface RadioGroupProps {
   type?: RadioGroupType;
   onChange?: (selected: RadioGroupValue[]) => void;
   inline?: boolean;
+  variantColor?: Color;
+  values?: RadioGroupValue[];
 }
 
 const notNullUndefined = (value: any) => value !== null && value !== undefined;
@@ -24,31 +28,38 @@ export default function RadioGroup({
   initialValue,
   style = 'card',
   type = 'radio',
-  onChange,
+  onChange = () => {},
   inline = false,
   iconStyle = 'check',
+  variantColor = Colors.Blue,
+  values,
 }: RadioGroupProps) {
   const [selected, setSelected] = useState<RadioGroupValue[]>(
     notNullUndefined(initialValue) ? [initialValue as RadioGroupValue] : []
   );
 
-  const onPress = (value: RadioGroupValue) => {
+  const updateValues = (incomingValues: RadioGroupValue[]) => {
+    setSelected(incomingValues);
+    onChange(incomingValues);
+  };
+
+  const onPress = (incomingValue: RadioGroupValue) => {
     if (type === 'radio') {
-      setSelected([value]);
+      updateValues([incomingValue]);
     } else {
-      if (selected.includes(value)) {
-        setSelected(
-          selected.filter((selectedValue) => selectedValue !== value)
+      if (selected.includes(incomingValue)) {
+        updateValues(
+          selected.filter((selectedValue) => selectedValue !== incomingValue)
         );
       } else {
-        setSelected([...selected, value]);
+        updateValues([...selected, incomingValue]);
       }
     }
   };
 
   useEffect(() => {
-    if (onChange) onChange(selected);
-  }, [onChange, selected]);
+    if (values) setSelected(values);
+  }, [values, setSelected]);
 
   const updatedChildrenWithProps = React.Children.map(
     children,
@@ -64,6 +75,7 @@ export default function RadioGroup({
         key: i,
         inline,
         iconStyle,
+        variantColor,
       });
     }
   );
