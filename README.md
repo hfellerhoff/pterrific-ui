@@ -12,6 +12,29 @@ npm install pterrific-ui
 
 ## Usage
 
+### Button
+
+```js
+import { Button, Colors } from "pterrific-ui";
+
+// ...
+
+const onPress = () => console.log("Button pressed"
+
+<Button
+    onPress={onPress)             // () => void
+    variantColor={Colors.Blue}    // Color
+    variantColorWeight='400'      // ColorIndex
+    size='md'                     // "sm" | "md" | "lg"    
+    isLoading={false}             // boolean
+    isDisabled={false}            // boolean
+>
+    Default
+</Button>
+```
+
+### Radio
+
 ```js
 import { Radio, RadioGroup } from "pterrific-ui";
 
