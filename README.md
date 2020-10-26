@@ -1,8 +1,8 @@
 # pterrific-ui
 
-NOTE: This library is HIGHLY work in progress. Breaking changes will be frequent and expected, so bear that in mind when using it.
-
 A simply pterrific component library for React Native.
+
+NOTE: This library is HIGHLY work in progress. Breaking changes will be frequent and expected, so bear that in mind when using it.
 
 ## Installation
 
