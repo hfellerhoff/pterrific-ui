@@ -29,14 +29,14 @@ const onPress = () => console.log("Button pressed"
     isLoading={false}             // boolean
     isDisabled={false}            // boolean
 >
-    Default
+    Press Me
 </Button>
 ```
 
 ### Radio
 
 ```js
-import { Radio, RadioGroup } from "pterrific-ui";
+import { Radio, RadioGroup, Colors } from "pterrific-ui";
 
 // ...
 
@@ -46,6 +46,7 @@ import { Radio, RadioGroup } from "pterrific-ui";
     type={type}             // "radio" | "select"
     inline={inline}         // boolean
     onChange={(incomingValues) => setValues(incomingValues)}  // string | number | boolean => void
+    variantColor={Colors.Blue},
 >
     <Radio>A</Radio>
     <Radio>B</Radio>
