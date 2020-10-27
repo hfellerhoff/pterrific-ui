@@ -1,59 +1,40 @@
 # pterrific-ui
 
-A simply pterrific component library for React Native.
+A simply pterrific component library for React Native. Supports iOS, Android, and Web. Highly inspired by the design principles of [Chakra-UI](https://github.com/chakra-ui/chakra-ui/).
 
-NOTE: This library is HIGHLY work in progress. Breaking changes will be frequent and expected, so bear that in mind when using it.
+> NOTE: This library is HIGHLY work in progress. Breaking changes will be frequent and expected, so bear that in mind when using it.
+
+## Documentation
+
+[The documentation for pterrific-ui is available here.](https://hfellerhoff.github.io/pterrific-ui/#/)
+
+## Examples
+
+To interact with the full library of components and see if pterrific-ui is the right choice for your project, [check out this snack on Expo.](https://expo.io/@hfellerhoff/projects/pterrific-ui-example)
 
 ## Installation
 
+You can install pterrific-ui with your favorite package manager.
+
 ```sh
-npm install pterrific-ui
+$ yarn add pterrific-ui
+
+# or
+
+$ npm i pterrific-ui
+
 ```
 
 ## Usage
 
-### Button
+pterrific-ui contains a (small but growing) number of components, all built around the idea of sensible defaults with flexible styling. Using a component is as simple as importing it as a named import and using it in your React Native project:
 
-```js
-import { Button, Colors } from "pterrific-ui";
-
-// ...
-
-const onPress = () => console.log("Button pressed"
-
-<Button
-    onPress={onPress)             // () => void
-    variantColor={Colors.Blue}    // Color
-    variantColorWeight='400'      // ColorIndex
-    size='md'                     // "sm" | "md" | "lg"    
-    isLoading={false}             // boolean
-    isDisabled={false}            // boolean
->
-    Press Me
-</Button>
-```
-
-### Radio
-
-```js
-import { Radio, RadioGroup, Colors } from "pterrific-ui";
+```tsx
+import { Button } from 'pterrific-ui';
 
 // ...
 
-<RadioGroup
-    style={style}               // "card" | "minimal"
-    iconStyle={iconStyle}       // "check" | "circle"
-    type={type}                 // "radio" | "select"
-    inline={inline}             // boolean
-    value={value}               // string | number | boolean
-    onChange={onChange}         // (values: string | number | boolean) => void
-    variantColor={Colors.Blue}  // Color
->
-    <Radio>A</Radio>
-    <Radio>B</Radio>
-    <Radio>C</Radio>
-    <Radio>D</Radio>
-</RadioGroup>
+<Button>Press Me!</Button>;
 ```
 
 ## Contributing
