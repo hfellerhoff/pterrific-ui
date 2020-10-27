@@ -1,4 +1,3 @@
-import { Spacing } from 'pterrific-ui';
 import React, { useState } from 'react';
 import {
   //@ts-ignore
@@ -9,6 +8,7 @@ import {
   Platform,
 } from 'react-native';
 import FontSizes from '../../constants/FontSizes';
+import Spacing from '../../constants/Spacing';
 import Colors, { Color, ColorIndex } from '../../constants/Colors';
 
 export interface ButtonProps {
