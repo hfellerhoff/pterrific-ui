@@ -1,5 +1,4 @@
 export type ColorIndex =
-  | '50'
   | '100'
   | '200'
   | '300'
@@ -10,7 +9,6 @@ export type ColorIndex =
   | '800'
   | '900';
 export interface Color {
-  50: string;
   100: string;
   200: string;
   300: string;
@@ -37,7 +35,6 @@ export interface ColorTheme {
 
 const Colors: ColorTheme = {
   Grayscale: {
-    50: '#F2F2F2',
     100: '#E6E6E6',
     200: '#CCCCCC',
     300: '#B3B3B3',
@@ -49,7 +46,6 @@ const Colors: ColorTheme = {
     900: '#1A1A1A',
   },
   Gray: {
-    50: '#F7FAFC',
     100: '#EDF2F7',
     200: '#e2e8f0',
     300: '#CBD5E0',
@@ -61,7 +57,6 @@ const Colors: ColorTheme = {
     900: '#171923',
   },
   Red: {
-    50: '#fff5f5',
     100: '#fed7d7',
     200: '#feb2b2',
     300: '#fc8181',
@@ -73,7 +68,6 @@ const Colors: ColorTheme = {
     900: '#63171b',
   },
   Orange: {
-    50: '#FFFAF0',
     100: '#FEEBC8',
     200: '#FBD38D',
     300: '#F6AD55',
@@ -85,7 +79,6 @@ const Colors: ColorTheme = {
     900: '#652B19',
   },
   Yellow: {
-    50: '#fffff0',
     100: '#fefcbf',
     200: '#faf089',
     300: '#f6e05e',
@@ -97,7 +90,6 @@ const Colors: ColorTheme = {
     900: '#5F370E',
   },
   Green: {
-    50: '#f0fff4',
     100: '#c6f6d5',
     200: '#9ae6b4',
     300: '#68d391',
@@ -109,7 +101,6 @@ const Colors: ColorTheme = {
     900: '#1C4532',
   },
   Teal: {
-    50: '#E6FFFA',
     100: '#B2F5EA',
     200: '#81E6D9',
     300: '#4FD1C5',
@@ -121,7 +112,6 @@ const Colors: ColorTheme = {
     900: '#1D4044',
   },
   Blue: {
-    50: '#ebf8ff',
     100: '#ceedff',
     200: '#90cdf4',
     300: '#63b3ed',
@@ -133,7 +123,6 @@ const Colors: ColorTheme = {
     900: '#1a365d',
   },
   Cyan: {
-    50: '#EDFDFD',
     100: '#C4F1F9',
     200: '#9DECF9',
     300: '#76E4F7',
@@ -145,7 +134,6 @@ const Colors: ColorTheme = {
     900: '#065666',
   },
   Purple: {
-    50: '#faf5ff',
     100: '#e9d8fd',
     200: '#d6bcfa',
     300: '#b794f4',
@@ -157,7 +145,6 @@ const Colors: ColorTheme = {
     900: '#322659',
   },
   Pink: {
-    50: '#fff5f7',
     100: '#fed7e2',
     200: '#fbb6ce',
     300: '#f687b3',
