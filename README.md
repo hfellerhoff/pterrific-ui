@@ -1,4 +1,4 @@
-# pterrific-ui
+![](pterrific-ui.jpeg)
 
 A simply pterrific component library for React Native. Supports iOS, Android, and Web. Highly inspired by the design principles of [Chakra-UI](https://github.com/chakra-ui/chakra-ui/).
 
