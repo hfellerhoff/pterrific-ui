@@ -6,9 +6,9 @@
 
 - Design and Theming
 
-  - [Colors](./design/colors.md)
+  - [Colors](design/colors.md)
 
 - Components
 
-  - [Button](./components/Button.md)
-  - [Radio Group](./components/RadioGroup.md)
+  - [Button](components/Button.md)
+  - [Radio Group](components/RadioGroup.md)
