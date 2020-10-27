@@ -1,6 +1,6 @@
 # Radio Group
 
-More details to be added soon. (WIP)
+More details to be added soon – this page is WIP.
 
 ```tsx
 import { Radio, RadioGroup, Colors } from 'pterrific-ui';

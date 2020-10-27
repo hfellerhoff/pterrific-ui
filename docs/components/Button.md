@@ -18,7 +18,7 @@ import { Button } from 'pterrific-ui';
 
 ### onPress
 
-Use the <mark>**onPress**</mark> prop to perform an action on button press.
+Use the <mark>**onPress**</mark> prop to perform an action when the button is pressed.
 
 ```tsx
 const handlePress = () => console.log("Button pressed!")
