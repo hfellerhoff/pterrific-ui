@@ -6,7 +6,7 @@ A simply pterrific component library for React Native. Supports iOS, Android, an
 
 ## Examples
 
-To interact with the full library of components and see if pterrific-ui is the right choice for your project, check out this snack on Expo. (coming soon!)
+To interact with the full library of components and see if pterrific-ui is the right choice for your project, [check out this snack on Expo.](https://expo.io/@hfellerhoff/projects/pterrific-ui-example)
 
 ## Installation
 
