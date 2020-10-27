@@ -10,5 +10,5 @@
 
 - Components
 
-  - [Button](./components/button.md)
-  - [Radio Group](./components/radiogroup.md)
+  - [Button](./components/Button.md)
+  - [Radio Group](./components/RadioGroup.md)
