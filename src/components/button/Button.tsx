@@ -59,8 +59,9 @@ const Button = ({
             : variantColor[defaultWeight],
         },
         Platform.OS !== 'android' && Platform.OS !== 'ios'
-          ? // eslint-disable-next-line react-native/no-inline-styles
-            { cursor: 'pointer' }
+          ? isDisabled // eslint-disable-next-line react-native/no-inline-styles
+            ? { cursor: 'not-allowed' } // eslint-disable-next-line react-native/no-inline-styles
+            : { cursor: 'pointer' }
           : {},
       ]}
     >
